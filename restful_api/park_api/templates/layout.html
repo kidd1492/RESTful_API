@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+    <nav>
+        <ul>
+            {% if session.get("user_id")  %}
+            <li><a href="/api">Dashboard</a></li>
+            <li class="hideOnMobile"><a href="/documentation">Documentation</a></li>
+            <li class="hideOnMobile"><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/">Home</a></li>
+            
+            <li class="hideOnMobile"><a href="/login">Login</a></li>
+            <li class="hideOnMobile"><a href="/">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+<body>
+    {% block content %} 
+    
+    {% endblock %}
+
+    <script>
+        document.getElementById('updateLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('/update_api_key', { method: 'PUT' })
+            .then(() => location.reload());
+        });
+    </script>
+</body>
+</html>

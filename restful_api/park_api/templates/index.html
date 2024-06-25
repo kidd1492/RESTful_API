@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="hero_container">
+        <h1>Welcome to the Api</h1>
+        <div class="hero_content">
+        <h3>Our API provides comprehensive information about national parks and campgrounds across the country. 
+            Whether you're building an app for outdoor enthusiasts, conducting environmental research, 
+            or planning your next adventure, our API is your gateway to valuable data.</h3><br/><br/>
+
+        <h3>With our easy-to-use API, you can retrieve detailed information about parks, search for campgrounds, 
+            and much more. Register now to get your API key and start exploring!</h3>
+        </div>
+    </div>
+
+
+    <div class="row2">          
+        <form method="post">
+            <div><h1>Register for API key</h1></div><br />
+            <div>
+                <div class="input_box">
+                    <input type="email" id="email" name="email" placeholder="Enter email">
+                </div>
+
+                <div class="input_box">
+                    <input type="text" id="user_name" name="user_name" placeholder="Username">
+                </div>.
+
+                <div class="input_box">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+
+                <div class="input_box">
+                    <input type="password" id="password1" name="password1" placeholder="Confirm Password">
+                </div>
+                <br />
+            <button type="submit" value="Sign Up">Generate Key</button>
+            </div>
+        </form>               
+    </div>
+
+    <div class="inforow">
+        <h1>Explore our documentation</h1>
+        <a href="/documentation"><h1>Documentation</h1></a>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}All Parks{% endblock %}
+
+
+{% block content %}
+
+    {% for park in parks %}
+        <h3>{{ park.name }}</h3><br/>
+        <h5>{{ park.description }}</h5><br/>
+        <a href="{{ park.url }}">{{ park.url }}</a><br/><br/>
+    {% endfor %}
+
+{% endblock %}

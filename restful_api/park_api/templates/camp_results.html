@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}All Parks{% endblock %}
+
+
+{% block content %}
+
+<table>
+    <thead>
+
+        <tr>
+            <th>Camp Name</th>
+            <th>Total Sites</th>
+            <th>Electric Sites</th>
+            <th>Park Name</th>
+            <th>Reservation URL</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for camp in camps %}
+        <tr>
+            <td>{{ camp.name }}</td>
+            <td>{{ camp.totalSites }}</td>
+            <td>{{ camp.tentOnly }}</td>
+            <td>{{ camp.park.name}}</td>
+            <td><a href="{{ camp.reservationUrl }}">{{ camp.reservationUrl  }}</a></td>
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+</table>
+
+
+{% endblock %}

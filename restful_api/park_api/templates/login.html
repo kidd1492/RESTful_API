@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="post">
+
+            <div><h1>Login</h1></div><br />
+
+            <div>
+                    <label for="email">Email Address</label>
+                  <div class="input_box">
+                    <input type="email" id="email" name="email" placeholder="Enter email">
+                  </div>
+
+                    <label for="password">Password</label>
+                  <div class="input_box">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                  </div>
+            </div>
+
+                  <br />
+                  <button type="submit" value="Sign Up">Login</button>
+        </form>
+
+    </div>
+{% endblock %}

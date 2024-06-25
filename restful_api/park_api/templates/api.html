@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %}API Key{% endblock %}
+
+
+{% block content %}
+
+<div class="inforow">
+    <h1>You are registered</h1>
+</div>
+
+<div class="row2">
+    <h2>Your API Key is : </h2><h1>{{ api_key }}</h1><br/><br/>
+    <a href="/update_api_key" id="updateLink">Update API Key</a>
+</div>
+
+<div class="inforow">
+    <h1>Explore our documentation</h1>
+    <a href="/documentation"><h1>Documentation</h1></a>
+</div>
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+{% block title %}Documentation{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Documentation</h1>
+<h2>API Documentation</h2>
+
+<h3>/parks</h3>
+<p><strong>start</strong><br>
+Type: Integer<br>
+Usage: Query parameter<br>
+Description: Get the next [limit] results starting with this number. Default is 0.</p>
+
+<p><strong>limit</strong><br>
+Type: Integer<br>
+Usage: Query parameter<br>
+Description: Number of results to return per request. Default is 25.</p>
+
+<p>Example: api/v1/parks?start=0&limit=2</p>
+
+<h3>api/v1/parks</h3>
+<p>Good Response: 200<br>
+Response type: application/json</p>
+
+<p>Example Response:</p>
+<pre>
+{
+    "data": [
+        {
+            "description": "For over a century people from around the world have…",
+            "name": "Abraham Lincoln Birthplace National Historical Park",
+            "park_code": "abli",
+            "park_id": 1001,
+            "url": "https://www.nps.gov/abli/index.htm"
+        },
+        {
+            "description": "Acadia National Park protects the natural beauty of the highest rocky....",
+            "name": "Acadia National Park",
+            "park_code": "acad",
+            "park_id": 1002,
+            "url": "https://www.nps.gov/acad/index.htm"
+        }
+    ]
+}
+</pre>
+
+<h3>Individual Park</h3>
+<p>/api/v1/parks/1002</p>
+<p>Good Response: 200<br>
+Response type: application/json</p>
+
+<p>Example Response:</p>
+<pre>
+{
+    "data": {
+        "description": "For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",
+        "name": "Abraham Lincoln Birthplace National Historical Park",
+        "park_code": "abli",
+        "park_id": 1001,
+        "url": "https://www.nps.gov/abli/index.htm"
+    }
+}
+</pre>
+
+<h3>/camps</h3>
+<p><strong>start</strong><br>
+Type: Integer<br>
+Usage: Query parameter<br>
+Description: Get the next [limit] results starting with this number. Default is 0.</p>
+
+<p><strong>limit</strong><br>
+Type: Integer<br>
+Usage: Query parameter<br>
+Description: Number of results to return per request. Default is 50.</p>
+
+<p>Example: api/v1/camps?start=0&limit=2</p>
+<p>Good Response: 200<br>
+Response type: application/json</p>
+
+<p>Example Response:</p>
+<pre>
+{
+    "data": [
+        {
+            "dumpStation": "Yes - year round",
+            "electricalHookups": 104,
+            "firewoodForSale": "No",
+            "host": "Yes - year round",
+            "id": 11,
+            "latitude": 36.95603058,
+            "longitude": -111.4312363,
+            "name": "Antelope Point RV Park",
+            "park_code": "glca",
+            "potableWater": "['Yes - year round']",
+            "reservationUrl": "https://www.roverpass.com/c/antelope-point-rv-park-page-az/booking/?slug=antelope-point-rv-park-page-az",
+            "showers": "['None']",
+            "state": null,
+            "tentOnly": 0,
+            "totalSites": 104
+        },
+        {
+            "dumpStation": "No",
+            "electricalHookups": 0,
+            "firewoodForSale": "No",
+            "host": "No",
+            "id": 12,
+            "latitude": 39.42110918,
+            "longitude": -77.74884282,
+            "name": "Antietam Creek Campground",
+            "park_code": "choh",
+            "potableWater": "['Yes - seasonal']",
+            "reservationUrl": "https://www.recreation.gov/camping/campgrounds/252970",
+            "showers": "['None']",
+            "state": null,
+            "tentOnly": 20,
+            "totalSites": 20
+        }
+    ]
+}
+</pre>
+
+<h3>Camps by State:</h3>
+<p>api/v1/camps/WY</p>
+<p>Good Response: 200<br>
+Response type: application/json</p>
+
+<p>Example Response:</p>
+<pre>
+{
+    "data": [
+        {
+            "dumpStation": "No",
+            "electricalHookups": 0,
+            "firewoodForSale": "No",
+            "host": "Yes - seasonal",
+            "id": 35,
+            "latitude": 45.10441283,
+            "longitude": -108.2255711,
+            "name": "Barry's Landing & Trail Creek Campground",
+            "park_code": "bica",
+            "potableWater": "['No water']",
+            "reservationUrl": "http://www.hiddentreasurecharters.com",
+            "showers": "['None']",
+            "state": "WY",
+            "tentOnly": 16,
+            "totalSites": 30
+        },
+        {
+            "dumpStation": "No",
+            "electricalHookups": 0,
+            "firewoodForSale": "No",
+            "host": "Yes - seasonal",
+            "id": 45,
+            "latitude": 44.58183404,
+            "longitude": -104.7063435,
+            "name": "Belle Fourche River Campground",
+            "park_code": "deto",
+            "potableWater": "['Yes - seasonal']",
+            "reservationUrl": null,
+            "showers": "['None']",
+            "state": "WY",
+            "tentOnly": 3,
+            "totalSites": 46
+        }
+    ]
+}
+</pre>
+
+{% endblock%}
